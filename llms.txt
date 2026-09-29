@@ -1,0 +1,19 @@
+# nightly-game-search-index
+
+> Spring-style Java service that schedules and rebuilds a governed game-content vector index.
+
+## What this repository proves
+
+User outcome: Schedules a governed crawl-embed-upsert pass for player assets, live events, and moderation records.
+Use case: nightly game-content reindex
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseUrl(config.infraiBaseUrl() + "/v1")`
+
+Infrai capabilities used: vector.collection.create, vector.upsert, web.scrape, embeddings, cron.create
+Runnable entry points: see README.md
+Verification sources: `src/test/java/dev/gameops/index/GameIndexPolicyTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt

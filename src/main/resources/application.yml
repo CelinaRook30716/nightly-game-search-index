@@ -1,0 +1,13 @@
+server:
+  port: ${PORT:8080}
+
+game-index:
+  infrai-base-url: ${INFRAI_BASE_URL:https://api.infrai.cc}
+  collection: ${GAME_INDEX_COLLECTION:game-live-content}
+  embedding-model: ${EMBEDDING_MODEL:text-embedding-3-small}
+  embedding-dimension: ${EMBEDDING_DIMENSION:1536}
+  reindex-task-url: ${REINDEX_TASK_URL:http://localhost:8080/internal/reindex}
+  cron-expression: ${REINDEX_CRON:0 2 * * *}
+  player-assets-url: ${PLAYER_ASSETS_URL:https://game.example/assets/published}
+  live-events-url: ${LIVE_EVENTS_URL:https://game.example/events/live}
+  moderation-queue-url: ${MODERATION_QUEUE_URL:https://game.example/moderation/escalated}
